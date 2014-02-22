@@ -22,8 +22,15 @@
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
-       <%= yield %>
-       <div id="map"></div>
+       <div class="container">
+         <div class="row">
+           <div class="span12">
+            <%= yield %>
+            <div id="map"></div>
+          </div>
+         
+         </div> 
+       </div>
     </main>
 
     
