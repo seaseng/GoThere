@@ -6,7 +6,6 @@ class ExpediaController < ApplicationController
     Expedia.cid = 55505
     Expedia.api_key = ENV['EXPEDIA_KEY']
     Expedia.shared_secret = ENV['EXPEDIA_SECRET']
-    # Expedia.locale = 'en_US'
     Expedia.currency_code = 'USD'
     Expedia.minor_rev = 13
 
