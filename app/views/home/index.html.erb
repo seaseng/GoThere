@@ -1,3 +1,9 @@
  <h2>
   Are You Ready to Travel Safely?
 </h2>
+
+<% if user_signed_in? %>
+  <p>Welcome <%= current_user.email %> to your homepage. </p>
+<% else %>
+  <p>Please sign in or sign up.</p>
+<% end %>
