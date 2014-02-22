@@ -35,6 +35,9 @@ end
 
 gem 'devise'
 
+
+gem 'figaro'
+
 group :development, :test do
   gem 'pry'  
   gem 'pry-debugger'
