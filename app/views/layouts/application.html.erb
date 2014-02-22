@@ -10,7 +10,6 @@
     <!--map-->
     <script src="http://js.arcgis.com/3.8/"></script>
     <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
 
     <%= csrf_meta_tags %>
 
@@ -20,19 +19,44 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <div class="container">
-         <div class="row">
-           <div class="span12">
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <%= render 'layouts/messages' %>
+          <h1 class="page-header">
             <%= yield %>
-            <div id="map"></div>
-          </div>
-         
-         </div> 
-       </div>
-    </main>
+          </h1>
 
+          <h2 class="sub-header">Heat Map</h2>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  
     
 
   </body>
