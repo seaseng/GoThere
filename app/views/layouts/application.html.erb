@@ -6,7 +6,18 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gothere" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+    <!--vendor-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://js.arcgis.com/3.8/"></script>
+
+    <!--map styling-->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
+
     <%= csrf_meta_tags %>
+
+
   </head>
   <body>
     <header>
@@ -16,5 +27,8 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+
+    <div id="map"></div>
+
   </body>
 </html>
