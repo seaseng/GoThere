@@ -11,11 +11,13 @@ class ExpediaController < ApplicationController
 
     api = Expedia::Api.new
 
-    response = api.get_list({city: "Vienna", useGeoCoder: true, minTripAdvisorRating: 3.0,})
+    response = api.get_list({params[:search], useGeoCoder: true, minTripAdvisorRating: 3.0,})
 
+    binding.pry
     # response = api.get_list({arrivalDate:"02/22/2014 ",destinationString: "San Francisco, CA USA", numberOfResults: 30, searchradius: 10, sort: "PROMO"})
 
     render :json => response.to_json
+    # redirect_to :back
   end
 
 end
