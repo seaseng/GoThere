@@ -19,4 +19,7 @@ class ExpediaController < ApplicationController
     # render JSON 
     render :json => response.to_json
   end
+
+  
+  
 end
