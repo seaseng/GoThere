@@ -14,16 +14,9 @@ class ExpediaController < ApplicationController
     response = api.get_list({address: "30 Germania St, Boston, MA 02130}"})
 
     response = api.get_list({arrivalDate:"02/22/2014 ",destinationString: "San Francisco, CA USA", numberOfResults: 30, searchradius: 10, sort: "PROMO"})
-  end
-
-  def create
-    
-    
-  end
-
-  def update
-  end
-
-  def destroy
+    #
+    # expect JSON response
+    # render JSON 
+    render json: response.to_json
   end
 end
