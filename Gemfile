@@ -32,18 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
 gem 'devise'
-
-
 gem 'figaro'
-
 
 group :development, :test do
   gem 'awesome_print'
   gem 'pry'  
   gem 'pry-debugger'
-
 end
 
 # Use ActiveModel has_secure_password
