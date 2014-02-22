@@ -54,9 +54,11 @@ RSpec.configure do |config|
   config.order = "random"
 
 
+  config.include CapybaraHelpers
+
   config.include FactoryGirl::Syntax::Methods
 
-  Capybara.default_wait_time = 10
+  Capybara.default_wait_time = 4
 
   Capybara.javascript_driver = :poltergeist
 

@@ -69,6 +69,8 @@ group :test do
   gem 'poltergeist'  
   gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'selenium-webdriver'
+  gem "capybara-webkit"
 end
 
 group :development, :test do
