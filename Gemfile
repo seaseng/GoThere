@@ -56,6 +56,19 @@ gem 'bootstrap-sass'
 
 group :development do
   gem 'rails_layout'
+  gem 'letter_opener'
+  gem 'better_errors'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.0.0.beta' 
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'poltergeist'  
+  gem 'shoulda-matchers'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development, :test do
