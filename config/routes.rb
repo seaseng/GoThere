@@ -1,9 +1,6 @@
 Gothere::Application.routes.draw do
-  get "expedia/new"
-  get "expedia/create"
-  get "expedia/update"
-  get "expedia/destroy"
-  devise_for :users#, path_names: {sign_in: "login", sign_out: "logout"}
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   root to: 'home#index'
 
   # devise_for :users

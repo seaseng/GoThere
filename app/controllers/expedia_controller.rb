@@ -17,6 +17,6 @@ class ExpediaController < ApplicationController
     #
     # expect JSON response
     # render JSON 
-    render json: response.to_json
+    render :json => response.to_json
   end
 end
