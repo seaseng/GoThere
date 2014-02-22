@@ -27,20 +27,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-gem 'devise'
-gem 'figaro'
-
-group :development, :test do
-  gem 'awesome_print'
-  gem 'pry'  
-  gem 'pry-debugger'
-end
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -52,3 +38,30 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+# ====================================
+# rails default gems above this line
+# ====================================
+
+
+gem 'devise'
+gem 'figaro'
+gem 'bootstrap-sass'
+
+group :development do
+  gem 'rails_layout'
+end
+
+group :development, :test do
+  gem 'awesome_print'
+  gem 'pry'  
+  gem 'pry-debugger'
+end
+
+
