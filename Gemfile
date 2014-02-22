@@ -50,9 +50,12 @@ end
 # ====================================
 
 
+
 gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass'
+
+gem 'expedia'
 
 group :development do
   gem 'rails_layout'
