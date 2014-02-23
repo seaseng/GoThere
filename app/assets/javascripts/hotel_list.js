@@ -27,7 +27,9 @@ function slideySlideSliderSetup(){
 HotelListingController = {
   buildAndPlaceListing: function(hotel, id){
     var img_base_url = 'http://images.travelnow.com'
-    $('.nav.nav-sidebar').append("<li data-stars='" + hotel.hotelRating + "'><a href='#" + id + "'>" + hotel.name + "</a><center><img src='" + img_base_url + hotel.thumbNailUrl + "'></center></li> . . . . . . . . . . . . . . . . . . . . . .") 
+    $('.nav.nav-sidebar').append("<li data-stars='" + hotel.hotelRating + 
+      "' class='list-group-item'><a href='#" + id + "'>" + hotel.name + "</a><center><img src='" + 
+      img_base_url + hotel.thumbNailUrl + "'></center></li>") 
   },
   filterByStars: function(stars){
     this.beforeSort()
