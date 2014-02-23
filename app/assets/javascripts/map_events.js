@@ -9,8 +9,6 @@ $(document).ready(function() {
         map: MapController.map
       }, "legendDiv");
       legendDijit.startup();
-      debugger;
-
     });
   };
 
