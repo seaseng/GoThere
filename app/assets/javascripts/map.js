@@ -80,24 +80,29 @@ MapController = {
   removeCrimeLayer: function() {
     this.map.removeLayer(this.dynamicMapServiceLayer);
   },
+
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
     this.marker = new SimpleMarkerSymbol({
-      color: new Color([36,109,198,1]),
+      color: new Color([36,109,198,1])
     })
     this.marker.setPath(this.pointer_icon)
   },
   placeHotelMarkers: function(arr){
+    var arr = arr || TestData.hotels // development
+
     this.recenter([arr[0].longitude, arr[0].latitude])
 
     var that = this;
-    arr.forEach(function(place){
+    arr.forEach(function(place,i){
       var coords = {x: place.longitude, y: place.latitude}
-      var attributes = {street_address: place.address1}
+      var attributes = {id: i, street_address: place.address1}
       that.placeMarker({coords: coords, attributes: attributes})
+
+      HotelListingController.buildAndPlaceListing(place, i)
     })
   },
   placeMarker: function(place){
-    var place = place || TestData.place  //temp hardcode
+    var place = place || TestData.place  // development
     var point = new this.Point(place.coords)
     var graphic = new this.Graphic(point, MapController.marker, place.attributes);
 

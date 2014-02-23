@@ -2,22 +2,25 @@ TestData = {
   place: {
     coords: {
       x: -82.59, 
-      y: 39.59
+      y: 39.59,
     }, attributes: {
       address: "100 Street",
-      price: "$2.50"
+      price: "$2.50",
     }
   },
+  
   places: [
     this.place,
     {coords: {
       x: -122.59, 
-      y: 39.59
+      y: 39.59,
     }, attributes: {
       address: "200 Street",
-      price: "$12.50"
+      price: "$12.50",
     }}
   ],
+
+
 
   crimes: [{
     "time" : "12:00",
@@ -26,7 +29,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.419616109671",
-      "latitude" : "37.8019942438049"
+      "latitude" : "37.8019942438049",
     },
     "address" : "LOMBARD ST / HYDE ST",
     "descript" : "GRAND THEFT FROM LOCKED AUTO",
@@ -35,7 +38,7 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.8019942438049",
     "x" : "-122.419616109671",
-    "incidntnum" : "146022613"
+    "incidntnum" : "146022613",
   }
   , {
     "time" : "13:55",
@@ -44,7 +47,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.405894420706",
-      "latitude" : "37.7896023539705"
+      "latitude" : "37.7896023539705",
     },
     "address" : "300 Block of SUTTER ST",
     "descript" : "GRAND THEFT FROM LOCKED AUTO",
@@ -53,7 +56,7 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.7896023539705",
     "x" : "-122.405894420706",
-    "incidntnum" : "146022362"
+    "incidntnum" : "146022362",
   }
   , {
     "time" : "17:15",
@@ -62,7 +65,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.409973312269",
-      "latitude" : "37.7851896203434"
+      "latitude" : "37.7851896203434",
     },
     "address" : "200 Block of ELLIS ST",
     "descript" : "BURGLARY,STORE UNDER CONSTRUCTION, FORCIBLE ENTRY",
@@ -71,7 +74,7 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.7851896203434",
     "x" : "-122.409973312269",
-    "incidntnum" : "140098935"
+    "incidntnum" : "140098935",
   }
   , {
     "time" : "14:00",
@@ -80,7 +83,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.409043928994",
-      "latitude" : "37.7975730481122"
+      "latitude" : "37.7975730481122",
     },
     "address" : "BROADWAY ST / CORDELIA ST",
     "descript" : "GRAND THEFT FROM UNLOCKED AUTO",
@@ -89,7 +92,7 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.7975730481122",
     "x" : "-122.409043928994",
-    "incidntnum" : "140091785"
+    "incidntnum" : "140091785",
   }
   , {
     "time" : "02:00",
@@ -98,7 +101,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.418601780502",
-      "latitude" : "37.7636325572274"
+      "latitude" : "37.7636325572274",
     },
     "address" : "100 Block of CAPP ST",
     "descript" : "GRAND THEFT FROM LOCKED AUTO",
@@ -107,7 +110,7 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.7636325572274",
     "x" : "-122.418601780502",
-    "incidntnum" : "146023229"
+    "incidntnum" : "146023229",
   }
   , {
     "time" : "14:48",
@@ -116,7 +119,7 @@ TestData = {
     "location" : {
       "needs_recoding" : false,
       "longitude" : "-122.420676028352",
-      "latitude" : "37.7762540028806"
+      "latitude" : "37.7762540028806",
     },
     "address" : "100 Block of FELL ST",
     "descript" : "DEATH REPORT, CAUSE UNKNOWN",
@@ -125,6 +128,158 @@ TestData = {
     "date" : 1391155200,
     "y" : "37.7762540028806",
     "x" : "-122.420676028352",
-    "incidntnum" : "140091848"
-  }]
+    "incidntnum" : "140091848",
+  }],
+
+
+
+
+  hotels: [{ 
+      order: "0",
+      address1: "55 Cyril Magnin St",
+      airportCode: "SFO",
+      amenityMask: 7847947,
+      city: "San Francisco",
+      confidenceRating: 48,
+      countryCode: "US",
+      deepLink: "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=123447&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD",
+      highRate: 229,
+      hotelId: 123447,
+      hotelInDestination: true,
+      hotelRating: 4,
+      latitude: 37.78458,
+      locationDescription: "Near Union Square",
+      longitude: -122.40854,
+      lowRate: 179,
+      name: "Parc 55 Wyndham San Francisco - Union Square",
+      postalCode: 94102,
+      propertyCategory: 1,
+      proximityDistance: 5.4716816,
+      proximityUnit: "MI",
+      rateCurrencyCode: "USD",
+      shortDescription: "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;With a stay at Parc 55 Wyndham San Francisco - Union Square, you&apos;ll be centrally located in San Francisco, steps from San Francisco Visitor&apos;s Center and Powell and",
+      stateProvinceCode: "CA",
+      thumbNailUrl: "/hotels/1000000/20000/12600/12539/12539_113_t.jpg",
+      tripAdvisorRating: 4,
+      tripAdvisorRatingUrl: "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif",
+      tripAdvisorReviewCount: 4577,
+    },
+    { order: "1",
+      address1: "1565 Broadway",
+      airportCode: "SFO",
+      amenityMask: 2228224,
+      city: "San Francisco",
+      confidenceRating: 52,
+      countryCode: "US",
+      deepLink: "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=203190&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD",
+      highRate: 168.9986,
+      hotelId: 203190,
+      hotelInDestination: true,
+      hotelRating: 2,
+      latitude: 37.79584,
+      locationDescription: "Near Lombard Street",
+      longitude: -122.42284,
+      lowRate: 164.6095,
+      name: "Castle Inn",
+      postalCode: 94109,
+      propertyCategory: 1,
+      proximityDistance: 6.086275,
+      proximityUnit: "MI",
+      rateCurrencyCode: "USD",
+      shortDescription: "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;A stay at Castle Inn places you in the heart of San Francisco, walking distance from Haas-Lilienthal House and Allyne Park. This hotel is close to Union Square and",
+      stateProvinceCode: "CA",
+      thumbNailUrl: "/hotels/1000000/880000/873100/873039/873039_16_t.jpg",
+      tripAdvisorRating: 4,
+      tripAdvisorRatingUrl: "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif",
+      tripAdvisorReviewCount: 650,
+    },
+    { order: "2",
+      address1: "650 Bush Street",
+      airportCode: "SFO",
+      amenityMask: 16394,
+      city: "San Francisco",
+      confidenceRating: 95,
+      countryCode: "US",
+      deepLink: "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=129367&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD",
+      highRate: 229,
+      hotelId: 129367,
+      hotelInDestination: true,
+      hotelRating: 3,
+      latitude: 37.79033,
+      locationDescription: "Near Union Square",
+      longitude: -122.40806,
+      lowRate: 159,
+      name: "Executive Hotel Vintage Court",
+      postalCode: 94108,
+      propertyCategory: 1,
+      proximityDistance: 5.861771,
+      proximityUnit: "MI",
+      rateCurrencyCode: "USD",
+      shortDescription: "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;With a stay at Executive Hotel Vintage Court, you&apos;ll be centrally located in San Francisco, steps from SF Playhouse and Un-Scripted Theater Company. This romantic",
+      stateProvinceCode: "CA",
+      thumbNailUrl: "/hotels/1000000/10000/5400/5338/5338_31_t.jpg",
+      tripAdvisorRating: 3.5,
+      tripAdvisorRatingUrl: "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-12345-4.gif",
+      tripAdvisorReviewCount: 742,
+    },
+    { order: "3",
+      address1: "2237 Mason Street",
+      airportCode: "SFO",
+      amenityMask: 0,
+      city: "San Francisco",
+      confidenceRating: 82,
+      countryCode: "US",
+      deepLink: "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=232084&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD",
+      highRate: 129,
+      hotelId: 232084,
+      hotelInDestination: true,
+      hotelRating: 1.5,
+      latitude: 37.80427,
+      locationDescription: "Near Fisherman&apos;s Wharf",
+      longitude: -122.41314,
+      lowRate: 99,
+      name: "San Remo Hotel",
+      postalCode: 94133,
+      propertyCategory: 1,
+      proximityDistance: 6.7413507,
+      proximityUnit: "MI",
+      rateCurrencyCode: "USD",
+      shortDescription: "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;With a stay at San Remo Hotel in San Francisco (North Beach), you&apos;ll be minutes from Tattoo Art Museum and Wax Museum at Fisherman&apos;s Wharf. This hotel is close to",
+      stateProvinceCode: "CA",
+      thumbNailUrl: "/hotels/1000000/50000/41900/41833/41833_72_t.jpg",
+      tripAdvisorRating: 4,
+      tripAdvisorRatingUrl: "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif",
+      tripAdvisorReviewCount: 414,
+    },
+    { order: "4",
+      address1: "750 Kearny St",
+      airportCode: "SFO",
+      amenityMask: 7831560,
+      city: "San Francisco",
+      confidenceRating: 95,
+      countryCode: "US",
+      deepLink: "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=107229&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD",
+      highRate: 389.0016,
+      hotelId: 107229,
+      hotelInDestination: true,
+      hotelRating: 4,
+      latitude: 37.79503,
+      locationDescription: "Near Union Square",
+      longitude: -122.40486,
+      lowRate: 368.9962,
+      name: "Hilton San Francisco Downtown/Financial District",
+      postalCode: 94108,
+      propertyCategory: 1,
+      proximityDistance: 6.221016,
+      proximityUnit: "MI",
+      rateCurrencyCode: "USD",
+      shortDescription: "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;With a stay at Hilton San Francisco Downtown/Financial District, you&apos;ll be centrally located in San Francisco, steps from Chinese Culture Center and Buddha&apos;s",
+      stateProvinceCode: "CA",
+      thumbNailUrl: "/hotels/1000000/10000/4400/4302/4302_107_t.jpg",
+      tripAdvisorRating: 4,
+      tripAdvisorRatingUrl: "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif",
+      tripAdvisorReviewCount: 1435,
+    }],
+
+
 }
