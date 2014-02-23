@@ -11,10 +11,8 @@ $(document).ready(function(){
   $('.label-toggle-switch').on('switchChange', function (e, data) {
     if (data.value) {
       MapController.renderCrimeLayer() 
-    
     } else {
       MapController.removeCrimeLayer() 
-      
     }
   });
 
@@ -29,10 +27,12 @@ var doOnLoad = function() {
     "dojo/_base/Color",
     "esri/layers/ArcGISDynamicMapServiceLayer",
     "esri/layers/ImageParameters",
+    "esri/dijit/Legend",
+    "dojo/_base/array",
     "dojo/domReady!"
   ],  
-    function(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters){
-      MapController.init(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters)
+    function(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters, Legend, arrayUtils){
+      MapController.init(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters, Legend, arrayUtils)
     }
   )
 }
@@ -41,28 +41,24 @@ var doOnLoad = function() {
 MapController = {
   pointer_icon: "M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z",
   map_center: [-98.35,39.50], //lon, lat
-  init: function(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters){
+  init: function(Map, Point, Graphic, SimpleMarkerSymbol, Color, ArcGISDynamicMapServiceLayer, ImageParameters, Legend, arrayUtils){
     this.Point = Point
     this.Graphic = Graphic
     this.buildMarkerObject(SimpleMarkerSymbol,Color)
     this.mapLayer = ArcGISDynamicMapServiceLayer
     this.imageParameters = ImageParameters
-
     var that = this;
-    this.render(Map, function(){
-      // that.map.on('click', function(){
-      //   that.renderCrimeLayer(ImageParameters, ArcGISDynamicMapServiceLayer)
-      // })
-    })
+    this.render(Map);    
+    bindMapEvents(Legend, arrayUtils);
+
   },
-  render: function(Map, callback){
+  render: function(Map){
     this.map =  new Map("map", {
       basemap: "streets", 
       center: this.map_center,
       zoom: 4,
       sliderStyle: "small"
     });
-    callback()
   },
   recenter: function(lonlat){
     this.map.centerAndZoom(lonlat,13)
@@ -76,9 +72,11 @@ MapController = {
     });
 
     this.map.addLayer(this.dynamicMapServiceLayer);
-  },
+
+    },
   removeCrimeLayer: function() {
-    this.map.removeLayer(this.dynamicMapServiceLayer);
+      this.map.removeLayer(this.dynamicMapServiceLayer);
+      this.Legend.destroy();
   },
 
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
