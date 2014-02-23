@@ -29,15 +29,12 @@ MapController = {
     this.Point = Point
     this.Graphic = Graphic
     this.buildMarkerObject(SimpleMarkerSymbol,Color)
+
     var that = this;
     this.render(Map, function(){
-      that.getData(function(json){
-        that.placeMarkers(json)
-      })
       that.map.on('click', function(){
-        that.renderLayer(ImageParameters, ArcGISDynamicMapServiceLayer)
+        that.renderCrimeLayer(ImageParameters, ArcGISDynamicMapServiceLayer)
       })
-
     })
   },
   render: function(Map, callback){
@@ -52,11 +49,10 @@ MapController = {
   recenter: function(lonlat){
     this.map.centerAndZoom(lonlat,13)
   },
-  renderLayer: function(ImageParameters, ArcGISDynamicMapServiceLayer){
+  renderCrimeLayer: function(ImageParameters, ArcGISDynamicMapServiceLayer){
     var imageParameters = new ImageParameters();
-    imageParameters.format = "jpeg"; //set the image type to PNG24, note default is PNG8.
+    imageParameters.format = "jpeg";
 
-    //Takes a URL to a non cached map service.
     var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/USA_CrimeIndex/MapServer", {
       "opacity" : 0.8,
       "imageParameters" : imageParameters
@@ -64,16 +60,11 @@ MapController = {
 
     this.map.addLayer(dynamicMapServiceLayer);
   },
-  getData: function(callback){
-    // $.get("http://data.sfgov.org/resource/gxxq-x39z.json")
-    //  .done(callback)
-  },
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
-    this.symbol = new SimpleMarkerSymbol({
-      //style: 'circle',
+    this.marker = new SimpleMarkerSymbol({
       color: new Color([36,109,198,1]),
     })
-    this.symbol.setPath(this.pointer_icon)
+    this.marker.setPath(this.pointer_icon)
   },
   placeHotelMarkers: function(arr){
     this.recenter([arr[0].longitude, arr[0].latitude])
@@ -85,18 +76,10 @@ MapController = {
       that.placeMarker({coords: coords, attributes: attributes})
     })
   },
-  placeMarkers: function(arr){
-    var that = this;
-    arr.forEach(function(place,_){
-      var coords = place.coords || {x: place.location.longitude, y: place.location.latitude}
-      var attributes = place.attributes || {}
-      that.placeMarker({coords: coords, attributes: attributes})
-    })
-  },
   placeMarker: function(place){
     var place = place || TestData.place  //temp hardcode
     var point = new this.Point(place.coords)
-    var graphic = new this.Graphic(point, MapController.symbol, place.attributes);
+    var graphic = new this.Graphic(point, MapController.marker, place.attributes);
 
     this.map.graphics.add(graphic);
   }
