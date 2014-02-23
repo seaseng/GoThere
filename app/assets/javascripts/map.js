@@ -50,6 +50,7 @@ MapController = {
     var that = this;
     this.render(Map);    
     bindMapEvents(Legend, arrayUtils);
+
   },
   render: function(Map){
     this.map =  new Map("map", {
@@ -71,7 +72,8 @@ MapController = {
     });
 
     this.map.addLayer(this.dynamicMapServiceLayer);
-  },
+
+    },
   removeCrimeLayer: function() {
       this.map.removeLayer(this.dynamicMapServiceLayer);
       this.Legend.destroy();
