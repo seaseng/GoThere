@@ -74,6 +74,17 @@ MapController = {
     this.map.addLayer(this.dynamicMapServiceLayer);
 
     },
+    // NEW LAYER FOR SAO PAULO BELOW:
+  // renderInternationalCrimeLayer: function(){
+  //   var imageParameters = new this.imageParameters();
+  //   imageParameters.format = "jpeg";
+  //   this.dynamicMapServiceLayer = this.mapLayer("http://services.arcgis.com/zfGG7GlZ7oCre0nf/arcgis/rest/services/Sao_Paulo_POIs/FeatureServer/0", {
+  //     "opacity" : 0.4,
+  //     "imageParameters" : imageParameters
+  //   });
+
+  //   this.map.addLayer(this.dynamicMapServiceLayer);
+  // },
   removeCrimeLayer: function() {
       this.map.removeLayer(this.dynamicMapServiceLayer);
       this.Legend.destroy();
@@ -108,3 +119,4 @@ MapController = {
   }
 
 }
+
