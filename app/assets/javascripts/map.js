@@ -2,19 +2,31 @@
 
 $(document).ready(function(){
   doOnLoad()
-  var $togglebox = $("[name='my-togglebox']")
-  $togglebox.bootstrapSwitch();
+  
+  $("[name='toggle-crime']").bootstrapSwitch();
 
-  $('#label-toggle-switch').on('click', function(e, data) {
-    $('.label-toggle-switch').bootstrapSwitch('toggleState');
+  $('#label-toggle-crime').on('click', function(e, data) {
+    $('.label-toggle-crime').bootstrapSwitch('toggleState');
   });
-  $('.label-toggle-switch').on('switchChange', function (e, data) {
+  $('.label-toggle-crime').on('switchChange', function (e, data) {
     if (data.value) {
       MapController.renderCrimeLayer() 
     } else {
       MapController.removeCrimeLayer() 
     }
   });
+
+  // $("[name='toggle-supermarkets']").bootstrapSwitch();
+  // $('#label-toggle-supermarkets').on('click', function(e, data) {
+  //   $('.label-toggle-supermarkets').bootstrapSwitch('toggleState');
+  // });
+  // $('.label-toggle-supermarkets').on('switchChange', function (e, data) {
+  //   if (data.value) {
+  //     MapController.renderSuperMarkets() 
+  //   } else {
+  //     MapController.removeSuperMarkets() 
+  //   }
+  // });
 
 })
 
@@ -66,17 +78,30 @@ MapController = {
   renderCrimeLayer: function(){
     var imageParameters = new this.imageParameters();
     imageParameters.format = "jpeg";
-    this.dynamicMapServiceLayer = new this.mapLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/USA_CrimeIndex/MapServer", {
+    this.crimeLayer = new this.mapLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/USA_CrimeIndex/MapServer", {
       "opacity" : 0.4,
       "imageParameters" : imageParameters
     });
 
-    this.map.addLayer(this.dynamicMapServiceLayer);
+    this.map.addLayer(this.crimeLayer);
 
-    },
+  },
   removeCrimeLayer: function() {
-      this.map.removeLayer(this.dynamicMapServiceLayer);
+      this.map.removeLayer(this.crimeLayer);
       this.Legend.destroy();
+  },
+  renderSuperMarkets: function() {
+    var imageParameters = new this.imageParameters();
+    imageParameters.format = "jpeg";
+    this.supermarketLayer = new this.mapLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/SupermarketAccessMap/MapServer", {
+      "opacity" : 0.4,
+      "imageParameters" : imageParameters
+    });
+  },
+
+  removeSuperMarkets: function() {
+    this.map.removeLayer(this.supermarketLayer);
+    this.Legend.destroy();
   },
 
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
