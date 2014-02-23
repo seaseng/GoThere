@@ -11,7 +11,8 @@ $(document).ready( function() {
       data: { search: value },
       dataType: 'json'
     }).success( function(hotels) {
-      hotel_list = hotels;
+      //hotel_list = hotels;
+      MapController.placeHotelMarkers(hotels)
     })
 
   })
