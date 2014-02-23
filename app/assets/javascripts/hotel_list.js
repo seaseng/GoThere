@@ -18,8 +18,8 @@ $(document).ready( function() {
 
 var HotelListingController = {
   buildAndPlaceListing: function(hotel, id){
-    console.log(id)
-    $('.nav.nav-sidebar').append("<li><a href='#" + id + "'>" + hotel.name + "</a></li>")
+    var img_base_url = 'http://images.travelnow.com'
+    $('.nav.nav-sidebar').append("<li><a href='#" + id + "'>" + hotel.name + "</a><center><img src='" + img_base_url + hotel.thumbNailUrl + "'></center></li> . . . . . . . . . . . . . . . . . . . . . .") 
   },
 }
 
