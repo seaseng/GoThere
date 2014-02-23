@@ -2,6 +2,22 @@
 
 $(document).ready(function(){
   doOnLoad()
+  var $togglebox = $("[name='my-togglebox']")
+  $togglebox.bootstrapSwitch();
+
+  $('#label-toggle-switch').on('click', function(e, data) {
+    $('.label-toggle-switch').bootstrapSwitch('toggleState');
+  });
+  $('.label-toggle-switch').on('switchChange', function (e, data) {
+    if (data.value) {
+      MapController.renderCrimeLayer() 
+    
+    } else {
+      MapController.removeCrimeLayer() 
+      
+    }
+  });
+
 })
 
 var doOnLoad = function() {
@@ -29,12 +45,14 @@ MapController = {
     this.Point = Point
     this.Graphic = Graphic
     this.buildMarkerObject(SimpleMarkerSymbol,Color)
+    this.mapLayer = ArcGISDynamicMapServiceLayer
+    this.imageParameters = ImageParameters
 
     var that = this;
     this.render(Map, function(){
-      that.map.on('click', function(){
-        that.renderCrimeLayer(ImageParameters, ArcGISDynamicMapServiceLayer)
-      })
+      // that.map.on('click', function(){
+      //   that.renderCrimeLayer(ImageParameters, ArcGISDynamicMapServiceLayer)
+      // })
     })
   },
   render: function(Map, callback){
@@ -49,16 +67,18 @@ MapController = {
   recenter: function(lonlat){
     this.map.centerAndZoom(lonlat,13)
   },
-  renderCrimeLayer: function(ImageParameters, ArcGISDynamicMapServiceLayer){
-    var imageParameters = new ImageParameters();
+  renderCrimeLayer: function(){
+    var imageParameters = new this.imageParameters();
     imageParameters.format = "jpeg";
-
-    var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/USA_CrimeIndex/MapServer", {
-      "opacity" : 0.8,
+    this.dynamicMapServiceLayer = new this.mapLayer("http://megacity.esri.com/ArcGIS/rest/services/Demographics/USA_CrimeIndex/MapServer", {
+      "opacity" : 0.4,
       "imageParameters" : imageParameters
     });
 
-    this.map.addLayer(dynamicMapServiceLayer);
+    this.map.addLayer(this.dynamicMapServiceLayer);
+  },
+  removeCrimeLayer: function() {
+    this.map.removeLayer(this.dynamicMapServiceLayer);
   },
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
     this.marker = new SimpleMarkerSymbol({
