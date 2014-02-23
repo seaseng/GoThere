@@ -26,7 +26,6 @@ MapController = {
   init: function(Map, Point, Graphic, SimpleMarkerSymbol, Color){
     this.Point = Point
     this.Graphic = Graphic
-    esriConfig.defaults.io.proxyUrl = ""
     this.buildMarkerObject(SimpleMarkerSymbol,Color)
     var that = this;
     this.render(Map, function(){
@@ -58,7 +57,6 @@ MapController = {
   placeMarkers: function(arr){
     var that = this;
     arr.forEach(function(place,_){
-      //console.log(place.category)
       var coords = place.coords || {x: place.location.longitude, y: place.location.latitude}
       var attributes = place.attributes || {}
       that.placeMarker({coords: coords, attributes: attributes})
