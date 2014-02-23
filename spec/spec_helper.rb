@@ -60,6 +60,6 @@ RSpec.configure do |config|
 
   Capybara.default_wait_time = 4 
 
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :selenium
 
 end

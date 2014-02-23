@@ -16,13 +16,20 @@
         <%= render 'layouts/navigation_links' %>
       </ul>
 
-      <form class="navbar-form navbar-right" role="search">
+      <%= form_tag expedia_path, :method => :post, class: "navbar-form navbar-right", id: 'form-search', role: "search" do %> 
+        <!-- <div class="form-group">  -->
+          <%= text_field_tag :search, params[:search], placeholder: "Which City?" %> 
+        <!-- </div>  -->
+        <%= submit_tag "Search", class: "btn btn-default" %>
+      <% end %>
+
+<!--       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Go Where?">
         </div>
-        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+        <button type="submit" class="btn btn-default">Search</button>
       </form>
-      
+ -->      
     </div>
   </div>
 </nav>
