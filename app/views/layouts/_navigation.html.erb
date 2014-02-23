@@ -9,7 +9,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'GoThere', root_path, class: 'navbar-brand' %>
+      <%= link_to root_path, class: 'navbar-brand' do %> 
+        <span class='glyphicon glyphicon-send'></span>
+        GoThereSafely
+      <% end %>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -17,19 +20,10 @@
       </ul>
 
       <%= form_tag expedia_path, :method => :post, class: "navbar-form navbar-right", id: 'form-search', role: "search" do %> 
-        <!-- <div class="form-group">  -->
-          <%= text_field_tag :search, params[:search], placeholder: "Which City?" %> 
-        <!-- </div>  -->
-        <%= submit_tag "Search", class: "btn btn-default" %>
+          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Which City?" %> 
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
 
-<!--       <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Go Where?">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
- -->      
     </div>
   </div>
 </nav>
