@@ -11,14 +11,6 @@ class ExpediaController < ApplicationController
 
     api = Expedia::Api.new
 
-<<<<<<< HEAD
-    @response = api.get_list({city: params[:search], useGeoCoder: true, minTripAdvisorRating: 3.0,})
-
-    # response = api.get_list({arrivalDate:"02/22/2014 ",destinationString: "San Francisco, CA USA", numberOfResults: 30, searchradius: 10, sort: "PROMO"})
-    # binding.pry
-
-    render :json => response.to_json
-=======
     response = api.get_list({city: params[:search], useGeoCoder: true, minTripAdvisorRating: 3.0})
     unless response.inspect.include? "APIError"
       render :json => response.body['HotelListResponse']['HotelList']['HotelSummary'].to_json
@@ -26,8 +18,6 @@ class ExpediaController < ApplicationController
       render :json => { error: true }
     end
 
->>>>>>> 51d9d4715ea442e09f88a9088ad62dbd568efcc6
-    # redirect_to :back
   end
 
   def arc_map

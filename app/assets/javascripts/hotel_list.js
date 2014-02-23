@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-$(document).ready(function(){
-
-  
-
-});
-=======
 $(document).ready( function() {
 
   var hotel_list = [];
@@ -24,4 +17,3 @@ $(document).ready( function() {
   })
 
 })
->>>>>>> 51d9d4715ea442e09f88a9088ad62dbd568efcc6
