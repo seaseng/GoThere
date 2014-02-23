@@ -48,6 +48,8 @@ MapController = {
     this.symbol.setPath(this.pointer_icon)
   },
   placeHotelMarkers: function(arr){
+    var arr = arr || TestData.hotels // development
+
     this.recenter([arr[0].longitude, arr[0].latitude])
 
     var that = this;
@@ -58,7 +60,7 @@ MapController = {
     })
   },
   placeMarker: function(place){
-    var place = place || TestData.place  //temp hardcode
+    var place = place || TestData.place  // development
     var point = new this.Point(place.coords)
     var graphic = new this.Graphic(point, MapController.symbol, place.attributes);
 
