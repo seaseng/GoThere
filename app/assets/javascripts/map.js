@@ -28,31 +28,21 @@ MapController = {
     this.Graphic = Graphic
     this.buildMarkerObject(SimpleMarkerSymbol,Color)
     var that = this;
-    this.render(Map, function(){
-      that.getData(function(json){
-        that.placeMarkers(json)
-      })
-    })
+    this.render(Map)
   },
-  render: function(Map, callback){
+  render: function(Map){
     this.map =  new Map("map", {
       basemap: "streets", 
       center: this.map_center,
       zoom: 4,
       sliderStyle: "small"
     });
-    callback()
   },
   recenter: function(lonlat){
     this.map.centerAndZoom(lonlat,13)
   },
-  getData: function(callback){
-    // $.get("http://data.sfgov.org/resource/gxxq-x39z.json")
-    //  .done(callback)
-  },
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
     this.symbol = new SimpleMarkerSymbol({
-      //style: 'circle',
       color: new Color([36,109,198,1]),
     })
     this.symbol.setPath(this.pointer_icon)
@@ -64,14 +54,6 @@ MapController = {
     arr.forEach(function(place){
       var coords = {x: place.longitude, y: place.latitude}
       var attributes = {street_address: place.address1}
-      that.placeMarker({coords: coords, attributes: attributes})
-    })
-  },
-  placeMarkers: function(arr){
-    var that = this;
-    arr.forEach(function(place,_){
-      var coords = place.coords || {x: place.location.longitude, y: place.location.latitude}
-      var attributes = place.attributes || {}
       that.placeMarker({coords: coords, attributes: attributes})
     })
   },
