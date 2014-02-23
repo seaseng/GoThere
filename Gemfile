@@ -49,7 +49,7 @@ end
 # rails default gems above this line
 # ====================================
 
-
+gem 'rails_12factor'
 
 gem 'devise'
 gem 'figaro'
