@@ -1,7 +1,7 @@
 Gothere::Application.routes.draw do
 
 
-  post 'expedia' => 'expedia#new'
+  post 'expedia' => 'expedia#search'
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   root to: 'home#index'
