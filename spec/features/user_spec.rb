@@ -57,7 +57,7 @@ describe "User session", js: true do
 
   end
 
-  it "User can cancel their account" do
+  xit "User can cancel their account" do
     pending
     login(user)
     click_link 'Edit profile'
