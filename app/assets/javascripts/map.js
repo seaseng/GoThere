@@ -60,9 +60,10 @@ MapController = {
 
     this.map.addLayer(dynamicMapServiceLayer);
   },
+
   buildMarkerObject: function(SimpleMarkerSymbol, Color){
-    this.symbol = new SimpleMarkerSymbol({
-      color: new Color([36,109,198,1]),
+    this.marker = new SimpleMarkerSymbol({
+      color: new Color([36,109,198,1])
     })
     this.marker.setPath(this.pointer_icon)
   },
