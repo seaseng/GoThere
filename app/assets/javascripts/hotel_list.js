@@ -1,6 +1,5 @@
 $(document).ready( function() {
 
-  var hotel_list = [];
   $('form#form-search').on('submit', function(e) {
     e.preventDefault()
     url = $(this).attr('action')
@@ -16,3 +15,11 @@ $(document).ready( function() {
   })
 
 })
+
+var HotelListingController = {
+  buildAndPlaceListing: function(hotel, id){
+    console.log(id)
+    $('.nav.nav-sidebar').append("<li><a href='#" + id + "'>" + hotel.name + "</a></li>")
+  },
+}
+

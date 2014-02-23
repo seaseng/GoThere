@@ -73,10 +73,12 @@ MapController = {
     this.recenter([arr[0].longitude, arr[0].latitude])
 
     var that = this;
-    arr.forEach(function(place){
+    arr.forEach(function(place,i){
       var coords = {x: place.longitude, y: place.latitude}
-      var attributes = {street_address: place.address1}
+      var attributes = {id: i, street_address: place.address1}
       that.placeMarker({coords: coords, attributes: attributes})
+
+      HotelListingController.buildAndPlaceListing(place, i)
     })
   },
   placeMarker: function(place){

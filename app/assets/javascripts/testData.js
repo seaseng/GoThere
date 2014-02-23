@@ -8,7 +8,7 @@ TestData = {
       price: "$2.50",
     }
   },
-
+  
   places: [
     this.place,
     {coords: {
