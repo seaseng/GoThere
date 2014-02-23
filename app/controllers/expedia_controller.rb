@@ -11,12 +11,36 @@ class ExpediaController < ApplicationController
 
     api = Expedia::Api.new
 
-    response = api.get_list({city: params[:search], useGeoCoder: true, minTripAdvisorRating: 3.0,})
+    @response = api.get_list({city: params[:search], useGeoCoder: true, minTripAdvisorRating: 3.0,})
 
     # response = api.get_list({arrivalDate:"02/22/2014 ",destinationString: "San Francisco, CA USA", numberOfResults: 30, searchradius: 10, sort: "PROMO"})
+    # binding.pry
 
     render :json => response.to_json
     # redirect_to :back
+  end
+
+  def arc_map
+
+  # Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
+  # X = cos(lat) * cos(lon)
+  # Y = cos(lat) * sin(lon)
+  # Z = sin(lat)
+
+  # Compute average x, y and z coordinates.
+  # x = (x1 + x2 + ... + xn) / n
+  # y = (y1 + y2 + ... + yn) / n
+  # z = (z1 + z2 + ... + zn) / n
+
+  # Convert average x, y, z coordinate to latitude and longitude.
+  # Lon = atan2(y, x)
+  # Hyp = sqrt(x * x + y * y)
+  # Lat = atan2(z, hyp)
+    
+  # @response.body['HotelListResponse']['HotelList']['HotelSummary']
+
+
+
   end
 
 end
