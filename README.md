@@ -7,7 +7,7 @@ Demo it here: http://gotheresafely.herokuapp.com/
 * Expedia API
 * ArcGIS mapping & ArcGIS USA Crime Index Layer
 * Rails
-* bootstrap-slider.js
+* bootstrap-slider.js & bootstrap-switch.js
 
 ### Goals:
 * Curated travel experience with an emphasis on safety
