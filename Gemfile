@@ -49,12 +49,11 @@ end
 # rails default gems above this line
 # ====================================
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass'
-
 gem 'expedia'
 
 group :development do
